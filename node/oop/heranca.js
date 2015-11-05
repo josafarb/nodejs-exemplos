@@ -11,6 +11,7 @@ var ClassePai = function() {
 ClassePai.prototype.metodo = function() {
     this.parte1();
     this.parte2();
+    console.log('this.attr -> ' + this.attr);
 };
 ClassePai.prototype.parte1 = function() {
     console.log('ClassePai.parte1');
@@ -23,12 +24,12 @@ objetoClassePai.metodo();
 
 var ClasseFilha = function(attr) {
     ClassePai.call(this);
-    this.attr = attr;
+    this.attr = attr || 'ClasseFilha';
 };
 ClasseFilha.prototype = Object.create(ClassePai.prototype);
 ClasseFilha.prototype.constructor = ClasseFilha;
 ClasseFilha.prototype.parte1 = function() {
     console.log('ClasseFilha.parte1');
 };
-var objetoClasseFilha = new ClasseFilha();
+var objetoClasseFilha = new ClasseFilha('attrFilha');
 objetoClasseFilha.metodo();
