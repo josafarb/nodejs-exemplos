@@ -1,12 +1,10 @@
-// node/require/models/Professor.js
-// objetivo:
-//      Demonstrar o uso de arquivos diferentes em js
-//
 'use strict';
-
-// classe e construtor juntos
-var Professor = function(matricula) {
-    this.matricula = matricula || '';
+var Professor = function(matricula,setor,dataa,tipoContrato,jornadaTrabalho){
+  this.matricula = matricula;
+  this.setor = setor;
+  this.dataa = dataa;
+  this.tipoContrato= tipoContrato;
+  this.jornadaTrabalho = jornadaTrabalho;
+  console.log('PROFESSOR CONTRATADO !');
 };
-
 module.exports = Professor;
